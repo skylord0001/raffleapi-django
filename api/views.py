@@ -1,9 +1,13 @@
+import requests, time, uuid
+from django.shortcuts import redirect
 from django.http import Http404
 from django.views import generic
 from django.utils import timezone
 from rest_framework import status
 from django.db.models import F, Q
 from django.urls import reverse_lazy
+from django.urls import reverse
+from django.http import HttpResponse
 from django.contrib.auth.models import User
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
@@ -111,6 +115,8 @@ class TicketDetail(generics.RetrieveAPIView):
 class TicketCreate(generics.CreateAPIView):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         # Get the raffle object
@@ -126,12 +132,11 @@ class TicketCreate(generics.CreateAPIView):
             # Create the ticket object
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
-            serializer.save()
-
+            serializer.save(owner=request.user) # Set the owner field to the authenticated user
+            
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response({'message': 'No more tickets available for this raffle.'}, status=status.HTTP_400_BAD_REQUEST)
-
 
 class NotificationList(generics.ListAPIView):
     serializer_class = NotificationSerializer
@@ -140,3 +145,66 @@ class NotificationList(generics.ListAPIView):
 
     def get_queryset(self):
         return Notification.objects.all().order_by('-created_at')
+
+
+
+def paystack_payment(request, id):
+    # Set up variables
+    paystack_secret_key = 'sk_test_67e0a2056a3a4e3307026df87224d27ebccaa804'
+    amount = 10000
+    email = 'example@email.com'
+    timestamp = str(int(time.time() * 1000))  # current timestamp in milliseconds
+    unique_id = str(uuid.uuid4())  # unique identifier
+    reference = timestamp + '_' + unique_id  # concatenate timestamp and unique id
+    callback_url = request.build_absolute_uri('/paystack_callback/')
+
+
+    request.session['ticket_ids'] = [int(id)]
+
+    payload = {
+        "email": email,
+        "amount": amount,
+        "reference": reference,
+        "callback_url": callback_url
+    }
+
+    headers = {
+        "Authorization": "Bearer " + paystack_secret_key,
+        "Content-Type": "application/json"
+    }
+
+
+    response = requests.post('https://api.paystack.co/transaction/initialize', json=payload, headers=headers)
+    authorization_url = response.json()['data']['authorization_url']
+
+    return redirect(authorization_url)
+
+def paystack_callback(request):
+    reference = request.GET.get('reference')
+
+    paystack_secret_key = 'sk_test_67e0a2056a3a4e3307026df87224d27ebccaa804'
+    headers = {
+        "Authorization": "Bearer " + paystack_secret_key,
+        "Content-Type": "application/json"
+    }
+
+
+    verify_response = requests.get('https://api.paystack.co/transaction/verify/{}'.format(reference), headers=headers)
+    status = verify_response.json()['data']['status']
+
+    if status == 'success':
+        ticket_ids = request.session.get('ticket_ids')
+        admin = request.session.get('admin')
+        if ticket_ids:
+            tickets = Ticket.objects.filter(id__in=ticket_ids)
+            for ticket in tickets:
+                ticket.paid = True
+                ticket.paystack_reference = reference
+                ticket.save()
+
+        if admin == "admin":
+            return redirect(reverse('admin:api_ticket_changelist'))
+        else:
+            return HttpResponse('successful')
+    else:
+        return HttpResponse('Payment failed.')

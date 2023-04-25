@@ -1,8 +1,10 @@
+import requests, time, uuid
 from django import forms
 from django.urls import reverse
 from django.contrib import admin
 from django.utils import timezone
 from django.contrib import messages
+from django.shortcuts import redirect
 from django.utils.html import format_html
 from .models import Raffle, Ticket, Notification
 from django.core.exceptions import ValidationError
@@ -28,8 +30,54 @@ class TicketAdminForm(forms.ModelForm):
         return cleaned_data
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('id', 'owner_link', 'raffle_link', 'key_link')
+    list_display = ('id', 'owner_link', 'raffle_link', 'key_link', 'paystack_reference')
+    list_filter = ('raffle', 'paid')
     form = TicketAdminForm
+    actions = ['make_payment']
+
+    def make_payment(self, request, queryset):
+        # Set up variables
+        paystack_secret_key = 'sk_test_67e0a2056a3a4e3307026df87224d27ebccaa804'
+        amount = 10000
+        email = 'example@email.com'
+        timestamp = str(int(time.time() * 1000))  # current timestamp in milliseconds
+        unique_id = str(uuid.uuid4())  # unique identifier
+        reference = timestamp + '_' + unique_id  # concatenate timestamp and unique id
+        callback_url = request.build_absolute_uri('/paystack_callback/?next={}'.format(request.get_full_path()))
+        
+        # Store ticket IDs in session
+        ticket_ids = queryset.values_list('id', flat=True)
+        request.session['ticket_ids'] = list(ticket_ids)
+        request.session['admin'] = 'admin'
+
+        # Get selected tickets
+        tickets = list(queryset)
+
+        # Calculate total amount
+        total_amount = len(tickets) * amount
+
+        # Create payload for Paystack API
+        payload = {
+            "email": email,
+            "amount": total_amount,
+            "reference": reference,
+            "callback_url": callback_url
+        }
+
+        headers = {
+            "Authorization": "Bearer " + paystack_secret_key,
+            "Content-Type": "application/json"
+        }
+
+        # Make POST request to initialize payment
+        response = requests.post('https://api.paystack.co/transaction/initialize', json=payload, headers=headers)
+
+        # Retrieve authorization URL
+        authorization_url = response.json()['data']['authorization_url']
+
+        # Redirect user to authorization URL
+        return redirect(authorization_url)
+    make_payment.short_description = 'Make payment for selected tickets'
 
     def owner_link(self, obj):
         url = reverse('admin:auth_user_change', args=[obj.owner.id])
@@ -45,7 +93,6 @@ class TicketAdmin(admin.ModelAdmin):
         url = reverse('admin:api_ticket_change', args=[obj.id])
         return format_html('<a href="{}">{}</a>', url, obj.key)
     key_link.short_description = 'Key'
-
 
 class RaffleAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_link', 'tickets_sold_link', 'winner_link')

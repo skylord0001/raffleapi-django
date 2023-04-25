@@ -56,6 +56,8 @@ class Ticket(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
     raffle = models.ForeignKey(Raffle, on_delete=models.CASCADE, related_name='tickets')
+    paystack_reference = models.CharField(max_length=255, blank=True, null=True)
+    paid = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         self.key = generate_key()

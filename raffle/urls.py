@@ -31,6 +31,9 @@ urlpatterns = [
     path('api/user/notifications/', api.UserNotificationList.as_view(), name='user-notification-list'),
 
     path('api/notifications/', api.NotificationList.as_view(), name='notification-list'),
+
+    path('paystack_payment/<int:id>/', api.paystack_payment, name='paystack_payment'),
+    path('paystack_callback/', api.paystack_callback, name='paystack_callback'),
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
