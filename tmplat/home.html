@@ -1,14 +1,168 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <title>Home Page</title>
-</head>
-<body>
-    <h1>Welcome to our Raffle website</h1>
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-</body>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="GYm,fitness,business,company,agency,multipurpose,modern,bootstrap4">
+      <!-- theme meta -->
+      <meta name="theme-name" content="gymfit" />
+      <meta name="author" content="Themefisher.com">
+      <title>GymFit| Fitness template</title>
+      <!-- bootstrap.min css -->
+      <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+      <!-- Icofont Css -->
+      <link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+      <!-- Main Stylesheet -->
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+   </head>
+   <body>
+      <!-- Section Menu Start -->
+      <div class="main-wrapper ">
+         <!-- Section Menu End -->
+         <!-- Section Testimonial Start -->
+         <section class="section textimonial position-relative bg-3 wallpaper" style="height: 100vh">
+            <div class="container">
+               <div class="row align-items-center mt-5 px-3 mx-1">
+                  <div class="col-lg-8">
+                     <h1 class="mt-1 mb-3 text-white">Elevate your life with <br>our  <span class="text-color">sensational prizes. Enter our raffle </span>and elevate your chances. <br/><img src="{% static 'images/android.jpg' %}" alt="Android app" width="40%" style='border-radius:10px'> <img src="{% static 'images/ios.png' %}" alt="iOS app" width="40%"></h1>  
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Section Testimonial END -->
+         <!-- Section About start -->
+         <section class="section about">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-lg-6">
+                     <img src="{% static 'images/bg-5.jpg' %}" alt="" class="img-fluid rounded shadow w-100">
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="pl-3 mt-5 mt-lg-0">
+                        <h2 class="mt-1 mb-3">Close your eyes <br>and <span class="text-color">envision a future</span> where the ordinary becomes extraordinary. </h2>
+                        <p class="mb-4">Where a single ticket holds the key to unlocking the doors of infinite potential. Picture the joy that dances in your eyes as you embrace the serendipity of chance, knowing that within the realm of this raffle, miracles are born and dreams take flight.</p>
+                        <a href="raffle" class="btn btn-main">Try Now<i class="fa fa-angle-right ml-2"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Section About End -->
+         <!-- section Call To action start -->
+         <section class="section cta">
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-lg-8 col-md-12 col-sm-12">
+                     <div class="text-center">
+                        <span class="h6 letter-spacing text-white">Isn't it your time to test your luck?</span>
+                        <h2 class="text-lg mt-4 mb-5 text-white">
+                           Enter. Win. Experience the thrill. <span class="text-color">Our raffle </span>awaits your luck.
+                        </h2>
+                        <a href="raffle" class="btn btn-main text-white">Join Today</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- section Call To action start -->
+         <!-- Section Services Start -->
+         <section class="section services ">
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-lg-8 text-center">
+                     <div class="section-title">
+                        <div class="divider mb-3"></div>
+                        <h2>How It Work</h2>
+                        <p>Take a leap of faith and enter our raffle for a chance to win big.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row no-gutters">
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                     <div class="text-center  px-4 py-5">
+                        <i class="icofont-tracking text-lg text-color"></i>
+                        <h4 class="mt-3 mb-4 text-uppercase">Browse Raffles</h4>
+                        <p>Browse through various raffles using our Android app, iOS or even here, each with their own unique prize, entry requirements, description, and end date.</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                     <div class="text-center  px-4 py-5">
+                        <i class="icofont-runner-alt-1 text-lg text-color"></i>
+                        <h4 class="mt-3 mb-4 text-uppercase">Enter Raffle</h4>
+                        <p> Once you finds a raffle you're interested in, you can enter the raffle by purchasing one or more tickets. The more tickets you purchases, the higher their chances of winning.</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                     <div class="text-center  px-4 py-5">
+                        <i class="icofont-runner-alt-2 text-lg text-color"></i>
+                        <h4 class="mt-3 mb-4 text-uppercase">Wait for Results</h4>
+                        <p> After the raffle has closed, Lucky Tree Raffle AI will randomly select a winner from the pool of participants who bought tickets. Winner will be annouce on winners platforms.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Section Services End -->
+         <!-- Section Footer Start -->
+         <!-- footer Start -->
+         <footer class="footer bg-black-50">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                     <h3 class="text-white mb-4">LuckyTreeRaffle</h3>
+                     <p>Revolutionize your raffle experience with LuckyTreeRaffle: The top-notch Nigerian online draw platform that offers players a chance to win big through auto-randomized selection of the luckiest winner.</p>
+                     <p>Don't miss your shot at greatness. Enter our raffle and let fortune favor the bold.</p>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                     <div class="footer-widget recent-blog">
+                        <h4 class="mb-4 text-white letter-spacing text-uppercase">Recents Posts</h4>
+                        <div>
+                           <a href="#"class="text-white">Insider tips for dominating raffles and scoring the ultimate jackpot</a>
+                           <p class="text-sm mt-2 text-white-50">28 April 2023</p>
+                        </div>
+                        <div class="mt-4">
+                           <a href="#"class="text-white">Master the art of strategic raffling and score epic prizes</a>
+                           <p class="text-sm mt-2 text-white-50">03 May 2023</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-5 mb-5 mb-lg-0">
+                     <div class="footer-widget">
+                        <h4 class="mb-4 text-white letter-spacing text-uppercase">Quick Links</h4>
+                        <ul class="list-unstyled footer-menu lh-40 mb-0">
+                            <li><a href="#"><i class="ti-angle-double-right mr-2"></i>About</a></li>
+                           <li><a href="raffle"><i class="ti-angle-double-right mr-2"></i>Raffle</a></li>
+                           <li><a href="#"><i class="ti-angle-double-right mr-2"></i>Android App</a></li>
+                           <li><a href="support"><i class="ti-angle-double-right mr-2"></i>Support</a></li>
+                           <li><a href="terms"><i class="ti-angle-double-right mr-2"></i>Terms</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-5">
+                     <div class="footer-widget">
+                        <h4 class="mb-4 text-white letter-spacing text-uppercase">Contact Us</h4>
+                        <p>Lucky Tree Raffle Draw Services Limited. Abuja, FCT, Nigeria 
+                        </p>
+                        <span class="text-white">+234 (810) 415–6984</span>
+                        <span class="text-white">contact@luckytreeraffle.com</span>
+                        <ul class="list-unstyled footer-menu lh-40 mb-0">
+						   <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
+						   <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="ti-twitter"></i></a></li>
+						   <li class="list-inline-item"><a href="https://github.com/themefisher/"><i class="ti-instagram"></i></a></li>
+						   <li class="list-inline-item"><a href="https://github.com/themefisher/"><i class="ti-youtube"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="align-items-center">
+                     <p class="text-white mt-3">Lucky Tree Raffle © 2023 , Created By Black Stack Hub</p>
+               </div>
+            </div>
+         </footer>
+         <!-- Section Footer End -->
+         <!-- Section Footer Scripts -->
+      </div>
+   </body>
 </html>

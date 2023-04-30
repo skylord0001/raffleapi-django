@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 from rest_framework.routers import DefaultRouter
 from website import views as website
 from django.views.decorators.cache import cache_control
@@ -34,6 +35,8 @@ urlpatterns = [
 
     path('paystack_payment/<int:id>/', api.paystack_payment, name='paystack_payment'),
     path('paystack_callback/', api.paystack_callback, name='paystack_callback'),
+
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name="robots"),
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
