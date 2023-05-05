@@ -20,43 +20,25 @@
    <body>
       <nav class="navbar navbar-expand-lg navigation fixed-top" id="navbar">
          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-               <h2 class="text-white text-capitalize"><img src='{% static 'images/logo.png' %}' width='100'/></h2>
+            <a class="navbar-brand" href="/" title='Lucky Tree Raffle Icon'>
+               <h2 class="text-white text-capitalize"><div id='logo'></div></h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsid"
-               aria-controls="navbarsid" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="ti-view-list"></span>
+               aria-controls="navbarsid" aria-label="Toggle navigation">
+               <i class="icofont-navigation-menu"></i>
             </button>
-            <div class="collapse text-center navbar-collapse" id="navbarsid">
+            <div class="collapse text-center navbar-collapse" id="navbarsid" style='width: 100%;'>
                <ul class="navbar-nav mx-auto">
                   <li class="nav-item active">
-                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Pages.</a>
-                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="about.html">About</a></li>
-                        <li><a class="dropdown-item" href="trainer.html">Trainer</a></li>
-                        <li><a class="dropdown-item" href="course.html">Courses</a></li>
-                     </ul>
-                  </li>
-                  <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                  <li class="nav-item"><a class="nav-link" href="pricing.html">Memebership</a></li>
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Blog.</a>
-                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="blog.html">Blog Grid</a></li>
-                        <li><a class="dropdown-item" href="blog-sidebar.html">Blog Sidebar</a></li>
-                        <li><a class="dropdown-item" href="blog-single.html">Blog Details</a></li>
-                     </ul>
-                  </li>
-                  <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                  <li class="nav-item"><a class="nav-link" href="raffle">Raffle</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                </ul>
                <div class="my-md-0 ml-lg-4 mt-4 mt-lg-0 ml-auto text-lg-right mb-3 mb-lg-0">
-                  <a href="tel:+23-345-67890">
-                     <h3 class="text-color mb-0"><i class="ti-mobile mr-2"></i>+23-563-5688</h3>
+                  <a href="tel:+234-810-415–6984">
+                     <h3 class="text-color mb-0"><i class="ti-mobile mr-2"></i>+234 (810) 415–6984</h3>
                   </a>
                </div>
             </div>
@@ -70,7 +52,7 @@
             <div class="container">
                <div class="row align-items-center mt-5 px-3 mx-1">
                   <div class="col-lg-8">
-                     <h1 class="mt-1 mb-3 text-white">Elevate your life with <br>our  <span class="text-color">sensational prizes. Enter our raffle </span>and elevate your chances. <br/><img src="{% static 'images/android.jpg' %}" alt="Android app" width="40%" style='border-radius:10px'> <img src="{% static 'images/ios.png' %}" alt="iOS app" width="40%"></h1>  
+                     <h1 class="mt-1 mb-3 text-white">Elevate your life with <br>our  <span class="text-color">sensational prizes. Enter our raffle </span>and elevate your chances. <br/><img src="{% static 'images/android.jpg' %}" alt="available on Android " width="40%" style='border-radius:10px'> <img src="{% static 'images/ios.png' %}" alt="available on iOS " width="40%"></h1>  
                   </div>
                </div>
             </div>
@@ -155,7 +137,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                     <h3 class="text-white mb-4">LuckyTreeRaffle</h3>
+                     <h3 class="text-white mb-4" id='about'>LuckyTreeRaffle 🔞</h3>
                      <p>Revolutionize your raffle experience with LuckyTreeRaffle: The top-notch Nigerian online draw platform that offers players a chance to win big through auto-randomized selection of the luckiest winner.</p>
                      <p>Don't miss your shot at greatness. Enter our raffle and let fortune favor the bold.</p>
                   </div>
@@ -176,7 +158,7 @@
                      <div class="footer-widget">
                         <h4 class="mb-4 text-white letter-spacing text-uppercase">Quick Links</h4>
                         <ul class="list-unstyled footer-menu lh-40 mb-0">
-                            <li><a href="#"><i class="ti-angle-double-right mr-2"></i>About</a></li>
+                            <li><a href="#about"><i class="ti-angle-double-right mr-2"></i>About</a></li>
                            <li><a href="raffle"><i class="ti-angle-double-right mr-2"></i>Raffle</a></li>
                            <li><a href="#"><i class="ti-angle-double-right mr-2"></i>Android App</a></li>
                            <li><a href="support"><i class="ti-angle-double-right mr-2"></i>Support</a></li>
@@ -184,7 +166,7 @@
                         </ul>
                      </div>
                   </div>
-                  <div class="col-lg-3 col-md-5">
+                  <div class="col-lg-3 col-md-5" id='contact'>
                      <div class="footer-widget">
                         <h4 class="mb-4 text-white letter-spacing text-uppercase">Contact Us</h4>
                         <p>Lucky Tree Raffle Draw Services Limited. Abuja, FCT, Nigeria 
@@ -192,10 +174,10 @@
                         <span class="text-white">+234 (810) 415–6984</span>
                         <span class="text-white">contact@luckytreeraffle.com</span>
                         <ul class="list-unstyled footer-menu lh-40 mb-0">
-						   <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
-						   <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="ti-twitter"></i></a></li>
-						   <li class="list-inline-item"><a href="https://github.com/themefisher/"><i class="ti-instagram"></i></a></li>
-						   <li class="list-inline-item"><a href="https://github.com/themefisher/"><i class="ti-youtube"></i></a></li>
+						   <li class="list-inline-item"><a href="https://www.facebook.com/luckytreeraffle"><i class="icofont-facebook"></i></a></li>
+						   <li class="list-inline-item"><a href="https://twitter.com/luckytreeraffle"><i class="icofont-twitter"></i></a></li>
+						   <li class="list-inline-item"><a href="https://github.com/luckytreeraffle/"><i class="icofont-instagram"></i></a></li>
+						   <li class="list-inline-item"><a href="https://github.com/luckytreeraffle/"><i class="icofont-youtube"></i></a></li>
                         </ul>
                      </div>
                   </div>
@@ -210,5 +192,6 @@
       </div>
       <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
       <script src="{% static 'script.js' %}"></script>
+      <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
    </body>
 </html>

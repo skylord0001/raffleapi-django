@@ -542,6 +542,12 @@ a:hover, a:focus {
   opacity: 1;
 }
 
+#logo{
+  width: 80px;
+  height: 80px;
+  background: url('images/logo_big.png') no-repeat;
+  background-size: cover;
+}
 .lh-40 {
   line-height: 40px;
 }
@@ -621,4 +627,12 @@ a:hover, a:focus {
     padding: 0px;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+
+
+
