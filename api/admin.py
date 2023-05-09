@@ -9,6 +9,7 @@ from django.utils.html import format_html
 from .models import Raffle, Ticket, Notification
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django_summernote.widgets import SummernoteWidget
 
 @admin.register(Notification)
 class NotificationAdmin(admin.ModelAdmin):
@@ -94,9 +95,19 @@ class TicketAdmin(admin.ModelAdmin):
         return format_html('<a href="{}">{}</a>', url, obj.key)
     key_link.short_description = 'Key'
 
+class RaffleAdminForm(forms.ModelForm):
+    class Meta:
+        model = Raffle
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+        }
+
 class RaffleAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_link', 'tickets_sold_link', 'winner_link')
     actions = ['choose_winner']
+
+    form = RaffleAdminForm
 
     def has_delete_permission(self, request, obj=None):
         return True

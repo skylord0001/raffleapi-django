@@ -9,10 +9,12 @@ from rest_framework.routers import DefaultRouter
 from website import views as website
 from django.views.decorators.cache import cache_control
 from django.views.static import serve
+from django_summernote import urls as summernote_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include(summernote_urls)),
     
     path('', website.home, name='home'),
     path('about/', website.about, name='about'),
@@ -42,3 +44,4 @@ urlpatterns = [
 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, view=cache_control(max_age=3600)(serve))
+

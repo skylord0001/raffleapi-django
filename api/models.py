@@ -87,5 +87,5 @@ def delete_related_tickets(sender, instance, **kwargs):
 
 @receiver(pre_delete, sender=Ticket)
 def delete_ticket_notification(sender, instance, **kwargs):
-    Notification.objects.create(user=instance.owner, message=f"Your ticket ({instance.key}) for the {instance.raffle.name} raffle has been deleted.")
+    Notification.objects.create(user=instance.owner, message=f"Your ticket id ({instance.id}) for the {instance.raffle.name} raffle has been deleted.")
 
