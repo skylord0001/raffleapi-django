@@ -25,12 +25,14 @@ from .serializer import RaffleSerializer, TicketSerializer, RaffleUserSerializer
 
 
 class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self):
-        return self.request.user
+        user = self.request.user
+        return User.objects.get(username=user.username)
 
 class UserTicketList(generics.ListAPIView):
     serializer_class = TicketSerializer

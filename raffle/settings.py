@@ -85,7 +85,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -116,23 +115,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-"""
-# Import Google libraries
-from google.oauth2 import service_account
-from google.auth.transport.requests import Request
-
-# Configure Google Cloud Storage settings
-GS_BUCKET_NAME = 'ltraffle'
-GS_PROJECT_ID = 'ltraffle'
-
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
-credentials_json = 'ltraffle.json'
-credentials = service_account.Credentials.from_service_account_file(credentials_json)
-scoped_credentials = credentials.with_scopes(['https://www.googleapis.com/auth/cloud-platform'])
-GS_CREDENTIALS = scoped_credentials
-"""
 
 
 MEDIA_URL = '/images/'
