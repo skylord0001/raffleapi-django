@@ -17,9 +17,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include(summernote_urls)),
-    
-    path('', web.home, name='home'),
-    path('raffle', website.home, name='home'),
+
+    path('', website.home, name='home'),
+    path('raffle', web.home, name='home'),
     path('about/', website.about, name='about'),
     path('contact/', website.contact, name='contact'),
 
@@ -42,11 +42,10 @@ urlpatterns = [
     path('paystack_callback/', api.paystack_callback, name='paystack_callback'),
 
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name="robots"),
-    
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, view=cache_control(max_age=3600)(serve))
-
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, view=cache_control(max_age=3600)(serve))
 
 urlpatterns += staticfiles_urlpatterns(prefix='/')
