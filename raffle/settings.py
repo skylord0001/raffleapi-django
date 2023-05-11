@@ -117,11 +117,11 @@ USE_TZ = True
 
 
 
-MEDIA_URL = '/images/'
+MEDIA_URL = '/'
 MEDIA_DIRS = [
-    os.path.join(BASE_DIR, 'zmedias'),
+    os.path.join(BASE_DIR, 'images'),
 ]
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 
 STATIC_URL = '/static/'
