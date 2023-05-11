@@ -1,5 +1,6 @@
 from django.urls import path
 from api import views as api
+from web import views as web
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
@@ -10,13 +11,15 @@ from website import views as website
 from django.views.decorators.cache import cache_control
 from django.views.static import serve
 from django_summernote import urls as summernote_urls
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include(summernote_urls)),
     
-    path('', website.home, name='home'),
+    path('', web.home, name='home'),
+    path('raffle', website.home, name='home'),
     path('about/', website.about, name='about'),
     path('contact/', website.contact, name='contact'),
 
@@ -45,3 +48,5 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, view=cache_control(max_age=3600)(serve))
 
+
+urlpatterns += staticfiles_urlpatterns(prefix='/')
