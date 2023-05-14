@@ -104033,7 +104033,7 @@ s=q}while(true)switch(s){case 0:q=3
 k=t.N
 n=A.a6(["Authorization",u.H],k,k)
 s=6
-return A.Z(A.OW(A.e3("http://127.0.0.1:8000/api/raffles/?format=json&_="+Date.now(),0,null),n),$async$tu)
+return A.Z(A.OW(A.e3("https://luckytreeraffle.com/api/raffles/?format=json&_="+Date.now(),0,null),n),$async$tu)
 case 6:m=b
 k=m
 l=t.j.a(B.bF.pO(0,A.OT(A.OJ(k.e).c.a.h(0,"charset")).dX(0,k.w),null))
@@ -104057,7 +104057,7 @@ s=q}while(true)switch(s){case 0:q=3
 k=t.N
 n=A.a6(["Authorization",u.H],k,k)
 s=6
-return A.Z(A.OW(A.e3("http://127.0.0.1:8000/api/raffles/hot/?format=json&_="+Date.now(),0,null),n),$async$Co)
+return A.Z(A.OW(A.e3("https://luckytreeraffle.com/api/raffles/hot/?format=json&_="+Date.now(),0,null),n),$async$Co)
 case 6:m=b
 k=m
 l=B.bF.pO(0,A.OT(A.OJ(k.e).c.a.h(0,"charset")).dX(0,k.w),null)
@@ -104083,7 +104083,7 @@ s=p}while(true)switch(s){case 0:p=4
 m=n.a
 l=a0
 k=a
-h=A.e3("http://127.0.0.1:8000/api/user/profile/",0,null)
+h=A.e3("https://luckytreeraffle.com/api/user/profile/",0,null)
 g=A.h(l)
 f=A.h(k)
 f=B.aa.gho().cC(g+":"+f)
@@ -104133,7 +104133,7 @@ m=h
 if(a==null){i=n
 g=i==null?null:i.f}else g=a
 l=g
-i=A.e3("http://127.0.0.1:8000/api/user/profile/tickets/",0,null)
+i=A.e3("https://luckytreeraffle.com/api/user/profile/tickets/",0,null)
 f=A.h(m)
 e=A.h(l)
 e=B.aa.gho().cC(f+":"+e)
@@ -104171,7 +104171,7 @@ i=h==null?null:h.b}m=i
 g=c
 if(g==null){h=n
 g=h==null?null:h.f}l=g
-h=A.e3("http://127.0.0.1:8000/api/user/notifications/",0,null)
+h=A.e3("https://luckytreeraffle.com/api/user/notifications/",0,null)
 f=A.h(m)
 e=A.h(l)
 e=B.aa.gho().cC(f+":"+e)
@@ -104207,7 +104207,7 @@ m=h
 if(b==null){i=n
 g=i==null?null:i.f}else g=b
 l=g
-i=A.e3("http://127.0.0.1:8000/api/notifications/",0,null)
+i=A.e3("https://luckytreeraffle.com/api/notifications/",0,null)
 f=A.h(m)
 e=A.h(l)
 e=B.aa.gho().cC(f+":"+e)
