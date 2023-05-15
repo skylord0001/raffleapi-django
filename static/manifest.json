@@ -1,11 +1,11 @@
 {
-    "name": "raffle",
+    "name": "Lucky Tree Raffle",
     "short_name": "raffle",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FF188F52",
+    "theme_color": "#FF188F52",
+    "description": "Where a single ticket holds the key to unlocking the doors of infinite potential.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

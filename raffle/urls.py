@@ -1,6 +1,5 @@
 from django.urls import path
 from api import views as api
-from web import views as web
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
@@ -19,9 +18,12 @@ urlpatterns = [
     path('summernote/', include(summernote_urls)),
 
     path('', website.home, name='home'),
-    path('raffle', web.home, name='home'),
-    path('about/', website.about, name='about'),
-    path('contact/', website.contact, name='contact'),
+    path('raffle', website.raffle, name='Raffle'),
+    path('about', website.about, name='about'),
+    path('frequently-asked-questions', website.faq, name='FAQ'),
+    path('contact', website.contact, name='contact'),
+    path('policy', website.policy, name='Policy'),
+    path('terms-and-conditions', website.terms, name='T&C'),
 
     path('api/tickets/', api.TicketList.as_view(), name='ticket-list'),
     path('api/tickets/create/', api.TicketCreate.as_view(), name='ticket-create'),

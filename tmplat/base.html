@@ -1,0 +1,115 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="theme-color" content="rgb(30, 185, 95)">
+      <meta name="author" content="blackstackhub.com">
+      <meta property="og:title" content="Lucky Tree Raffle">
+      <meta name="description" content="{% block descriptions %}{% endblock %}">
+      <meta property="og:description" content="{% block description %}{% endblock %}">
+      <meta property="og:image" content="https://luckytreeraffle.com{% static 'images/share.jpeg' %}">
+      <meta property="og:url" content="https://www.luckytreeraffle.com">
+      <meta property="og:type" content="website">
+      <title>{% block title %}{% endblock %}</title>
+      <link rel="icon" type="image/png" href="{% static 'images/logo_big.png' %}">
+      <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navigation fixed-top" id="navbar">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="/" title='Lucky Tree Raffle Icon'>
+               <h2 class="text-white text-capitalize"><div id='logo'></div></h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsid"
+               aria-controls="navbarsid" aria-label="Toggle navigation">
+               <i class="icofont-navigation-menu"></i>
+            </button>
+            <div class="collapse text-center navbar-collapse" id="navbarsid" style='width: 100%;'>
+               <ul class="navbar-nav mx-auto">
+                  <li class="nav-item active">
+                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="raffle">Raffle</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+               </ul>
+               <div class="my-md-0 ml-lg-4 mt-4 mt-lg-0 ml-auto text-lg-right mb-3 mb-lg-0">
+                  <a href="tel:+234-810-415–6984">
+                     <h3 class="text-color mb-0"><i class="ti-mobile mr-2"></i>+234 (810) 415–6984</h3>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- Section Menu Start -->
+      <div class="main-wrapper ">
+         <!-- Section Menu End -->
+         {% block content %}{% endblock %}
+         <!-- Section Footer Start -->
+         <!-- footer Start -->
+         <footer class="footer bg-black-50">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                     <h3 class="text-white mb-4" id='about'>LuckyTreeRaffle 🔞</h3>
+                     <p>Revolutionize your raffle experience with LuckyTreeRaffle: The top-notch Nigerian online draw platform that offers players a chance to win big through auto-randomized selection of the luckiest winner.</p>
+                     <p>Don't miss your shot at greatness. Enter our raffle and let fortune favor the bold.</p>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                     <div class="footer-widget recent-blog">
+                        <h4 class="mb-4 text-white letter-spacing text-uppercase">Recents Posts</h4>
+                        <div>
+                           <a href="#"class="text-white">Insider tips for dominating raffles and scoring the ultimate jackpot</a>
+                           <p class="text-sm mt-2 text-white-50">28 April 2023</p>
+                        </div>
+                        <div class="mt-4">
+                           <a href="#"class="text-white">Master the art of strategic raffling and score epic prizes</a>
+                           <p class="text-sm mt-2 text-white-50">03 May 2023</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-5 mb-5 mb-lg-0">
+                     <div class="footer-widget">
+                        <h4 class="mb-4 text-white letter-spacing text-uppercase">Quick Links</h4>
+                        <ul class="list-unstyled footer-menu lh-40 mb-0">
+                            <li><a href="/raffle"><i class="ti-angle-double-right mr-2"></i>Raffle</a></li>
+                           <li><a href="/policy"><i class="ti-angle-double-right mr-2"></i>Policy</a></li>
+                           <li><a href="/terms-and-conditions"><i class="ti-angle-double-right mr-2"></i>Terms</a></li>
+                           <li><a href="/frequently-asked-questions"><i class="ti-angle-double-right mr-2"></i>FAQ</a></li>
+                           <li><a href="/#howto"><i class="ti-angle-double-right mr-2"></i>How To</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-5" id='contact'>
+                     <div class="footer-widget">
+                        <h4 class="mb-4 text-white letter-spacing text-uppercase">Contact Us</h4>
+                        <p>Lucky Tree Raffle Draw Services Limited. Abuja, FCT, Nigeria 
+                        </p>
+                        <span class="text-white">+234 (810) 415–6984</span>
+                        <span class="text-white">support@luckytreeraffle.com</span>
+                        <ul class="list-unstyled footer-menu lh-40 mb-0">
+						   <li class="list-inline-item"><a href="https://facebook.com/luckytreeraffle"><i class="icofont-facebook"></i></a></li>
+						   <li class="list-inline-item"><a href="https://twitter.com/luckytreeraffle"><i class="icofont-twitter"></i></a></li>
+						   <li class="list-inline-item"><a href="https://instagram.com/luckytreeraffle/"><i class="icofont-instagram"></i></a></li>
+						   <li class="list-inline-item"><a href="https://youtube.com/luckytreeraffle/"><i class="icofont-youtube"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="align-items-center">
+                     <p class="text-white mt-3">Lucky Tree Raffle © 2023 , Created By Black Stack Hub</p>
+               </div>
+            </div>
+         </footer>
+         <!-- Section Footer End -->
+         <!-- Section Footer Scripts -->
+      </div>
+      <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+      <script src="{% static 'script.js' %}"></script>
+      <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+   </body>
+</html>
