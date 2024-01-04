@@ -56,7 +56,7 @@ This app was created as a learning experience project. While the concept of bett
 - Contact the developer at devfemibadmus@gmail.com for assistance or to obtain the required Paystack API key and authentication details.
 
 ## Screenshots
-### Check out [devfemibadmus/raffleapi-django](https://github.com/devfemibadmus/raffleapi-django) for the App screenshots
+### Check out [devfemibadmus/raffle-flutter](https://github.com/devfemibadmus/raffle-flutter) for the App screenshots
 ### Website Pages
 
 | Home | FAQ | Policy | Terms |
