@@ -59,13 +59,10 @@ This app was created as a learning experience project. While the concept of bett
 ### Check out [devfemibadmus/raffle-flutter](https://github.com/devfemibadmus/raffle-flutter) for the App screenshots
 ### Website Pages
 
-| Home | FAQ | 
-|------|-----|
-| ![Home](readme/Screenshot%20(964).png?raw=true) | ![FAQ](readme/Screenshot%20(965).png?raw=true) | 
-
-| Policy | Terms |
-|--------|-------|
-| ![Policy](readme/Screenshot%20(966).png?raw=true) | ![Terms](readme/Screenshot%20(967).png?raw=true) |
+![Home](readme/Screenshot%20(964).png?raw=true)
+![FAQ](readme/Screenshot%20(965).png?raw=true)
+![Policy](readme/Screenshot%20(966).png?raw=true)
+![Terms](readme/Screenshot%20(967).png?raw=true)
 
 
 ### Terminal Screenshot
