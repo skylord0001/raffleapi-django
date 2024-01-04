@@ -45,7 +45,7 @@ This app was created as a learning experience project. While the concept of bett
 
 ## Get Started
 1. Clone the Django backend from [devfemibadmus/raffleapi-django](https://github.com/devfemibadmus/raffleapi-django).
-2. Run the server or set up Apache for hosting.
+2. Run the server in 8880 or set up Apache for hosting.
 3. Access the app at the provided URL.
 4. Default login credentials:
    - Username/Email: admin@admin.com
@@ -56,7 +56,7 @@ This app was created as a learning experience project. While the concept of bett
 - Contact the developer at devfemibadmus@gmail.com for assistance or to obtain the required Paystack API key and authentication details.
 
 ## Screenshots
-
+### Check out [devfemibadmus/raffleapi-django](https://github.com/devfemibadmus/raffleapi-django) for the App screenshots
 ### Website Pages
 
 | Home | FAQ | Policy | Terms |
