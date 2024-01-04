@@ -67,6 +67,9 @@ This app was created as a learning experience project. While the concept of bett
 
 ![Terminal](readme/Screenshot%20(968).png?raw=true)
 
+## Code Usage
+The code is free to use for learning purposes. For development or further usage, please contact the developer at devfemibadmus@gmail.com for permission or collaboration.
+
 Feel free to explore, learn, and contribute to this project!
 
 **Note:** This project was initially intended for [luckytreeraffle.com](https://luckytreeraffle.com/) but was discontinued due to a lack of investors.
