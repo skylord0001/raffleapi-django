@@ -27,8 +27,8 @@ from .serializer import RaffleSerializer, TicketSerializer, RaffleUserSerializer
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    authentication_classes = [BasicAuthentication]
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [BasicAuthentication]
 
     def get_object(self):
         user = self.request.user
