@@ -1,5 +1,5 @@
 six==1.16.0
-Django==4.0.4
+Django==4.1.13
 Pillow==9.3.0
 urllib3==1.26.12
 uritemplate==4.1.1
