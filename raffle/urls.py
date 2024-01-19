@@ -18,7 +18,6 @@ urlpatterns = [
     path('summernote/', include(summernote_urls)),
 
     path('', website.home, name='home'),
-    path('raffle', website.raffle, name='Raffle'),
     path('about', website.about, name='about'),
     path('frequently-asked-questions', website.faq, name='FAQ'),
     path('contact', website.contact, name='contact'),
